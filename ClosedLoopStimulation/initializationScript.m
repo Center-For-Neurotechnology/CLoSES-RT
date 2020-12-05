@@ -56,10 +56,10 @@ if ~exist('sCoreParams','var')
    sCoreParams = [];
 end
 if ~exist('freqBandName','var')
-   freqBandName = 'THETAALPHAGAMMA';
+   freqBandName = 'THETA';
 end
 if ~exist('featureName','var')
-   featureName = 'LOGBANDPOWER';
+   featureName = 'SMOOTHBANDPOWER';
 end
 if ~exist('stimulationType','var')
    stimulationType = '';

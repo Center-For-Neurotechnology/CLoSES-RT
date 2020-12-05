@@ -147,21 +147,23 @@ sCoreParams.network.packetChainSize = 50;
 
 
 %% Net-specific hardware
-sCoreParams.network.pciBus = [4 5 5];
-sCoreParams.network.pciSlot = [0 13 14];
-sCoreParams.network.numNSPs = 1;
-
+%     %We are USING CLOSES 2
+%     sCoreParams.network.pciBus = [4 3 0];
+%     sCoreParams.network.pciSlot = [0 3 25];
+%     sCoreParams.network.numNSPs = 1;
+    
 % PROVIDENCE
 % sCoreParams.network.pciBus = [2 3 3];
 % sCoreParams.network.pciSlot = [0 14 15];
 % sCoreParams.network.numNSPs = 1;
 
-% MGH small RIG
+% MGH LARGE RIG
 if strncmpi( getenv('COMPUTERNAME'),'DESKTOP-U2P22ER',length('DESKTOP-U2P22ER'))
-    %We are on the SMALL RIG
-    sCoreParams.network.pciBus = [4 3 0];
-    sCoreParams.network.pciSlot = [0 3 25];
+    % We are using CLoSES 1 (changed RIZ 20201205)
+    sCoreParams.network.pciBus = [4 5 5]; %5
+    sCoreParams.network.pciSlot = [0 13 14]; %12
     sCoreParams.network.numNSPs = 1;
+
 end
 
 % BWH RIG - same as MGH large
