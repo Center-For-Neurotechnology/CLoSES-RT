@@ -147,11 +147,12 @@ sCoreParams.network.packetChainSize = 50;
 
 
 %% Net-specific hardware
-%     %We are USING CLOSES 2
-%     sCoreParams.network.pciBus = [4 3 0];
-%     sCoreParams.network.pciSlot = [0 3 25];
-%     sCoreParams.network.numNSPs = 1;
-    
+%     %We are USING CLOSES 2 - Wendyll
+if strncmpi( getenv('COMPUTERNAME'),'OPTIMUSPRIME',length('OPTIMUSPRIME'))
+    sCoreParams.network.pciBus = [4 3 0];
+    sCoreParams.network.pciSlot = [0 3 25];
+    sCoreParams.network.numNSPs = 1;
+end  
 % PROVIDENCE
 % sCoreParams.network.pciBus = [2 3 3];
 % sCoreParams.network.pciSlot = [0 14 15];
@@ -163,7 +164,6 @@ if strncmpi( getenv('COMPUTERNAME'),'DESKTOP-U2P22ER',length('DESKTOP-U2P22ER'))
     sCoreParams.network.pciBus = [4 5 5]; %5
     sCoreParams.network.pciSlot = [0 13 14]; %12
     sCoreParams.network.numNSPs = 1;
-
 end
 
 % BWH RIG - same as MGH large
